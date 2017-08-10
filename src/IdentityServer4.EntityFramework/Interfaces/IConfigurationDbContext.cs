@@ -9,9 +9,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IdentityServer4.EntityFramework.Interfaces
 {
-    public interface IConfigurationDbContext : IDisposable
+    public interface IConfigurationDbContext : IConfigurationDbContext<Client>
     {
-        DbSet<Client> Clients { get; set; }
+
+    }
+
+    public interface IConfigurationDbContext<TClient> : IDisposable
+        where TClient : class, IClient
+    {
+        DbSet<TClient> Clients { get; set; }
         DbSet<IdentityResource> IdentityResources { get; set; }
         DbSet<ApiResource> ApiResources { get; set; }
 

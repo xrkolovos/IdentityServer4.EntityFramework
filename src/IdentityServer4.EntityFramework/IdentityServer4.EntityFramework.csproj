@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Description>EntityFramework persistence layer for IdentityServer4</Description>
     <Authors>Brock Allen;Dominick Baier;Scott Brady</Authors>
-    <TargetFrameworks>netstandard1.4;net452</TargetFrameworks>
+    <TargetFrameworks>netstandard1.4</TargetFrameworks>
     <AssemblyName>IdentityServer4.EntityFramework</AssemblyName>
     <PackageId>IdentityServer4.EntityFramework</PackageId>
     <PackageTags>OAuth2;OAuth 2.0;OpenID Connect;Security;Identity;IdentityServer;EntityFramework</PackageTags>

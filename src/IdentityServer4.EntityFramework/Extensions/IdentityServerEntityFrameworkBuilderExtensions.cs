@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using IdentityServer4.EntityFramework.Options;
 using IdentityServer4.EntityFramework;
+using IdentityServer4.EntityFramework.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 
@@ -26,6 +27,8 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             builder.Services.AddDbContext<ConfigurationDbContext>(dbContextOptionsAction);
             builder.Services.AddScoped<IConfigurationDbContext, ConfigurationDbContext>();
+            builder.Services.AddScoped<IConfigurationDbContext<IdentityServer4.EntityFramework.Entities.Client>, ConfigurationDbContext>();
+            //builder.Services.AddScoped<IConfigurationDbContext<IClient>, ConfigurationDbContext<IClient>>();
 
             builder.Services.AddTransient<IClientStore, ClientStore>();
             builder.Services.AddTransient<IResourceStore, ResourceStore>();

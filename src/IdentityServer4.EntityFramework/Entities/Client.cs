@@ -4,11 +4,12 @@
 
 using IdentityServer4.Models;
 using System.Collections.Generic;
+using IdentityServer4.EntityFramework.Mappers;
 using static IdentityServer4.IdentityServerConstants;
 
 namespace IdentityServer4.EntityFramework.Entities
 {
-    public class Client
+    public class Client : IClient
     {
         public int Id { get; set; }
         public bool Enabled { get; set; } = true;
@@ -48,5 +49,9 @@ namespace IdentityServer4.EntityFramework.Entities
         public bool AlwaysSendClientClaims { get; set; }
         public bool PrefixClientClaims { get; set; } = true;
         public List<ClientCorsOrigin> AllowedCorsOrigins { get; set; }
+
+
+        public Models.Client ToModel() => ClientMappers.ToModel(this);
+        
     }
 }

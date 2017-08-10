@@ -12,9 +12,25 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IdentityServer4.EntityFramework.DbContexts
 {
-    public class ConfigurationDbContext : DbContext, IConfigurationDbContext
+    //public class ConfigurationDbContext : ConfigurationDbContext<Client>, IConfigurationDbContext, IConfigurationDbContext<Client>
+    //{
+    //    public ConfigurationDbContext(DbContextOptions<ConfigurationDbContext<IClient>> options, ConfigurationStoreOptions storeOptions)
+    //        : base(options, storeOptions)
+    //    {
+    //    }
+
+    //    public ConfigurationDbContext(DbContextOptions<ConfigurationDbContext<Client>> options, ConfigurationStoreOptions storeOptions) 
+    //        : base(options, storeOptions)
+    //    {
+    //    }
+    //}
+
+    public class ConfigurationDbContext : DbContext, IConfigurationDbContext, IConfigurationDbContext<Client>
     {
         private readonly ConfigurationStoreOptions storeOptions;
+        //public ConfigurationDbContext(DbContextOptions<ConfigurationDbContext<IClient>> options, ConfigurationStoreOptions storeOptions)
+        //{
+        //}
 
         public ConfigurationDbContext(DbContextOptions<ConfigurationDbContext> options, ConfigurationStoreOptions storeOptions)
             : base(options)

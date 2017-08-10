@@ -16,6 +16,16 @@ namespace IdentityServer4.EntityFramework.Mappers
 
         internal static IMapper Mapper { get; }
 
+        //public static Models.Client ToModel(this Entities.IClient client)
+        //{
+        //    return Mapper.Map<Models.Client>(client);
+        //}
+
+        //public static T ToEntity<T>(this Models.Client client)
+        //{
+        //    return Mapper.Map<T>(client);
+        //}
+
         public static Models.Client ToModel(this Entities.Client client)
         {
             return Mapper.Map<Models.Client>(client);
